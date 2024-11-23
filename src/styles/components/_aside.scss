@@ -1,0 +1,45 @@
+@use '../utils' as utils;
+
+.aside {
+  border-right: var(--border-width-small) var(--border-base-style) var(--clr-neutral-700);
+  display: inline-block;
+  min-width: 250px;
+
+  &__topics {
+    margin-block: 15px 30px;
+  }
+
+  &__topic {
+    margin-top: 25px;
+  }
+
+  &__topic-title {
+    @include utils.fluid-font-size(1.125rem, 1.3rem);
+
+    font-family: var(--ff-primary);
+
+    a {
+      color: var(--clr-base-400);
+    }
+  }
+
+  &__topic-items {
+    margin-left: 15px;
+    padding-left: 10px;
+    border-left: var(--border-width-small) var(--border-base-style) var(--clr-base-400);
+  }
+
+  &__topic-item {
+    @include utils.fluid-font-size(0.75rem, 0.875rem);
+    margin-block: 10px;
+
+    a {
+      color: var(--clr-neutral-200);
+      transition: color var(--transition-time-fast);
+
+      &:hover {
+        color: var(--clr-base-250)
+      }
+    }
+  }
+}

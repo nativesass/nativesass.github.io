@@ -1,0 +1,14 @@
+@use 'sass:string';
+
+// Provides fluid font-size with clamp
+@mixin fluid-font-size($min-value, $max-value) {
+	$factor: calc(1 / (71.25rem - 21.5rem) * ($max-value - $min-value));
+	$calc-value: string.unquote('#{ $min-value - (21.5rem * $factor) } + #{ 100vw * $factor }');
+
+	font-size: $min-value; // Fallback for older browsers
+	font-size: clamp(
+		#{if($min-value > $max-value, $max-value, $min-value)},
+		#{$calc-value},
+		#{if($min-value > $max-value, $min-value, $max-value)}
+	);
+}

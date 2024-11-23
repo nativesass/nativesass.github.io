@@ -1,0 +1,49 @@
+@use '../utils/' as utils;
+@use '../global/colors' as colors;
+
+:root {
+  // ------------------ Palette ---------------------
+  // Default colors
+  @each $category, $colors in colors.$palette-map {
+    @each $color-lightness, $lightness-value in $colors {
+      --clr-#{$category}-#{$color-lightness}: #{$lightness-value};
+    }
+  }
+
+  // Alpha colors
+  @each $category, $levels in colors.$palette-alpha-map {
+    @each $lightness, $alphas in $levels {
+      @each $alpha-level, $alpha-value in $alphas {
+        --clr-#{$category}-#{$lightness}-alpha-#{$alpha-level}: #{$alpha-value};
+      }
+    }
+  }
+  // ------------------------------------------------
+
+  // ------------------- Fonts ----------------------
+  // Families
+  --ff-primary: 'Lobster Two', serif;
+  --ff-secondary: 'Source Serif 4', serif;
+
+  // Weights
+  --fw-regular: 400;
+  --fw-bold: 700;
+  // ------------------------------------------------
+
+  // ---------------- Miscellaneous -----------------
+  // Border widths
+  --border-width-small: 1px;
+  --border-width-regular: 2px;
+  --border-width-medium: 3px;
+  --border-width-large: 4px;
+
+  // Border styles
+  --border-base-style: solid;
+
+  // Transition times
+  --transition-time-slow: 2s;
+  --transition-time-regular: 1s;
+  --transition-time-medium: 500ms;
+  --transition-time-fast: 300ms;
+  // ------------------------------------------------
+}

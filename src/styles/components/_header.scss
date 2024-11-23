@@ -1,0 +1,72 @@
+@use '../utils/' as utils;
+@use 'sass:math' as math;
+
+.header {
+  position: sticky;
+  background-color: var(--clr-neutral-970);
+  border-bottom: var(--border-width-small) var(--border-base-style) var(--clr-neutral-700);
+  padding: 15px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__logo {
+    height: 3.125rem;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__stylish-letter {
+    color: var(--clr-base-300);
+    font-weight: var(--fw-bold);
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__github-link {
+    @include utils.fluid-font-size(1.25rem, 1.5rem);
+
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+  }
+
+  h1 {
+    @include utils.fluid-font-size(1.5rem, 1.875rem);
+
+    display: inline-block;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+    color: var(--clr-base-400);
+  }
+
+  h2 {
+    @include utils.fluid-font-size(0.625rem, 0.8rem);
+
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-100);
+    padding-bottom: 5px;
+    border-top: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
+    padding-inline: 5px;
+    border-radius: 8px;
+  }
+}

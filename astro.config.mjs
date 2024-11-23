@@ -5,6 +5,5 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: 'https://nativesass.github.io',
-  base: 'nativesass'
+  site: 'https://nativesass.github.io'
 });

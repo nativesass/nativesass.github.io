@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+// Converts px to rem
+@function pxToRem($pixels) {
+  @if math.is-unitless($pixels) {
+    @return math.div($pixels, 16) + rem;
+  } @else {
+    @error '\'pxToRem\' function expected a number'
+  }
+}
