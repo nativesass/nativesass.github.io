@@ -33,6 +33,11 @@ ul {
 }
 
 button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  font-family: var(--ff-secondary);
   cursor: pointer;
 }
 
@@ -40,6 +45,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+a {
+  color: var(--clr-base-300);
 }
 
 .wrapper {

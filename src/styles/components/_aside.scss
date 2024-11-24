@@ -1,25 +1,39 @@
 @use '../utils' as utils;
 
 .aside {
+  @include utils.fluid-size(9.375rem, 15.625rem, min-width);
+
   border-right: var(--border-width-small) var(--border-base-style) var(--clr-neutral-700);
   display: inline-block;
-  min-width: 250px;
 
   &__topics {
     margin-block: 15px 30px;
+    margin-right: 15px;
   }
 
   &__topic {
     margin-top: 25px;
+
+    .active {
+      color: var(--clr-base-300);
+      background-color: var(--clr-base-400-alpha-900);
+      border-radius: 5px;
+      padding-inline: 10px;
+    }
   }
 
   &__topic-title {
-    @include utils.fluid-font-size(1.125rem, 1.3rem);
+    @include utils.fluid-size(1.125rem, 1.3rem, font-size);
 
     font-family: var(--ff-primary);
 
     a {
       color: var(--clr-base-400);
+      transition: color var(--transition-time-fast);
+
+      &:hover {
+        color: var(--clr-base-500);
+      }
     }
   }
 
@@ -30,7 +44,8 @@
   }
 
   &__topic-item {
-    @include utils.fluid-font-size(0.75rem, 0.875rem);
+    @include utils.fluid-size(0.75rem, 0.875rem, font-size);
+
     margin-block: 10px;
 
     a {

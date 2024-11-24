@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header";
+import MainWrapper from "../../layouts/MainWrapper.astro";
+import Aside from "../../components/Aside.astro";
+import Content from "../../layouts/Content.astro";
+import Footer from "../../components/Footer";
+---
+
+<Layout title="Shorhand Properties | NativeSass">
+  <Header />
+
+  <MainWrapper>
+    <Aside />
+
+    <main>
+      <Content title="Shorthand Properties">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit eos
+          architecto, cum culpa enim, quisquam commodi qui quod blanditiis natus
+          corporis deleniti unde totam veniam quis nesciunt iste eaque
+          voluptatibus.
+        </p>
+      </Content>
+    </main>
+  </MainWrapper>
+
+  <Footer />
+</Layout>

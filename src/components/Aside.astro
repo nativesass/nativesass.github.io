@@ -1,0 +1,149 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<aside class="aside">
+  <nav class="aside__wrapper">
+    <ul class="aside__topics">
+      <li class="aside__topic">
+        <div class="aside__topic-title">
+          <a href="/">Getting Started</a>
+        </div>
+
+        <ul class="aside__topic-items">
+          <li class="aside__topic-item">
+            <a href="/" class={currentPath === "" ? "active" : ""}>
+              What is NativeSass?
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              href="/introduction/installation"
+              class={currentPath === "introduction/installation"
+                ? "active"
+                : ""}
+            >
+              Installation Setup
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="aside__topic">
+        <div class="aside__topic-title">
+          <a href="/features/sassy-function">Features</a>
+        </div>
+
+        <ul class="aside__topic-items">
+          <li class="aside__topic-item">
+            <a
+              href="/features/sassy-function"
+              class={currentPath === "features/sassy-function" ? "active" : ""}
+            >
+              The <code>sassy()</code> Function
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "features/nesting" ? "active" : ""}
+              href="/features/nesting"
+            >
+              Nesting
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "features/shared-styles" ? "active" : ""}
+              href="/features/shared-styles"
+            >
+              Shared Styles
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "features/shorthands" ? "active" : ""}
+              href="/features/shorthands"
+            >
+              Shorthand Properties
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="aside__topic">
+        <div class="aside__topic-title">
+          <a href="/upcoming-features/shorthands">Upcoming Features</a>
+        </div>
+
+        <ul class="aside__topic-items">
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "upcoming-features/shorthands"
+                ? "active"
+                : ""}
+              href="/upcoming-features/shorthands"
+            >
+              New + extended shorthands
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "upcoming-features/mixins" ? "active" : ""}
+              href="/upcoming-features/mixins"
+            >
+              Mixins
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "upcoming-features/maps" ? "active" : ""}
+              href="/upcoming-features/maps"
+            >
+              Maps
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="aside__topic">
+        <div class="aside__topic-title">
+          <a href="/mimicking/mixins">Mimicking</a>
+        </div>
+
+        <ul class="aside__topic-items">
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "mimicking/mixins" ? "active" : ""}
+              href="/mimicking/mixins">Mixins</a
+            >
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "mimicking/maps" ? "active" : ""}
+              href="/mimicking/maps"
+            >
+              Maps
+            </a>
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "mimicking/functions" ? "active" : ""}
+              href="/mimicking/functions"
+            >
+              Functions
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>

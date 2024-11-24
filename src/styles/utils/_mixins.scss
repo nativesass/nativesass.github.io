@@ -1,12 +1,60 @@
 @use 'sass:string';
+@use 'sass:list';
 
 // Provides fluid font-size with clamp
-@mixin fluid-font-size($min-value, $max-value) {
-	$factor: calc(1 / (71.25rem - 21.5rem) * ($max-value - $min-value));
+@mixin fluid-size($min-value, $max-value, $property) {
+  // List of valid values for the $property parameter
+  $valid-properties: (
+    font-size,
+    padding,
+    padding-top,
+    padding-right,
+    padding-bottom,
+    padding-left,
+    padding-inline,
+    padding-inline-start,
+    padding-inline-end,
+    padding-block,
+    padding-block-start,
+    padding-block-end,
+    margin,
+    margin-top,
+    margin-right
+    margin-bottom,
+    margin-left,
+    margin-inline,
+    margin-inline-start,
+    margin-inline-end,
+    margin-block,
+    margin-block-start,
+    margin-block-end,
+    width,
+    min-width,
+    max-width,
+    height,
+    min-height,
+    max-height,
+    gap,
+    row-gap,
+    column-gap,
+    line-height,
+    letter-spacing
+  );
+
+  // Check if the property is valid
+  @if not list.index($valid-properties, $property) {
+    @error "Invalid property for fluid-size mixin: #{$property}. Valid properties are: font-size, padding, margin, width, max-width, min-width, height, min-height, max-height, gap, line-height, letter-spacing, etc.";
+  }
+
+  // Calculate fluid value
+	$factor: calc(1 / (87.5rem - 21.5rem) * ($max-value - $min-value));
 	$calc-value: string.unquote('#{ $min-value - (21.5rem * $factor) } + #{ 100vw * $factor }');
 
-	font-size: $min-value; // Fallback for older browsers
-	font-size: clamp(
+  // Fallback for older browsers
+	#{$property}: $min-value;
+
+  // Fluid property with clamp
+	#{$property}: clamp(
 		#{if($min-value > $max-value, $max-value, $min-value)},
 		#{$calc-value},
 		#{if($min-value > $max-value, $min-value, $max-value)}

@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header";
+import MainWrapper from "../../layouts/MainWrapper.astro";
+import Aside from "../../components/Aside.astro";
+import Content from "../../layouts/Content.astro";
+import Footer from "../../components/Footer";
+---
+
+<Layout title="Mimicking Mixins | NativeSass">
+  <Header />
+
+  <MainWrapper>
+    <Aside />
+
+    <main>
+      <Content title="Mimicking Mixins">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, culpa
+          voluptatum quasi sunt aliquam dolore ex, rerum tempora labore sapiente
+          rem excepturi deserunt, optio consectetur? Commodi in atque voluptates
+          dignissimos.
+        </p>
+      </Content>
+    </main>
+  </MainWrapper>
+
+  <Footer />
+</Layout>

@@ -1,13 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header";
+import MainWrapper from "../layouts/MainWrapper.astro";
+import Aside from "../components/Aside.astro";
+import Content from "../layouts/Content.astro";
 import Footer from "../components/Footer";
-import Aside from "../components/Aside";
 ---
 
-<Layout title="Home | NativeSass">
+<Layout title="Getting Started | NativeSass">
   <Header />
-  <Aside />
-  <main></main>
+
+  <MainWrapper>
+    <Aside />
+
+    <main>
+      <Content title="What is NativeSass?">
+        <p>
+          NativeSass is a React Native that allows you to use powerful features
+          of Sass and CSS, but combining the structured approach of them with
+          React Native's own styling paradigm. It aims to maintain the React
+          Native way of styling components while integrating powerful, familiar
+          features from Sass and CSS.
+        </p>
+
+        <br />
+
+        <p>
+          NativeSass enhances the styling process and productivity by
+          introducing nesting, shared styles, advanced shorthand properties, and
+          much more. It allows developers to write expressive and maintainable
+          styles while adhering to React Native's core principles.
+        </p>
+
+        <br />
+
+        <p>
+          NativeSass is compatible with both the <a
+            href="https://docs.expo.dev/more/expo-cli/">Expo CLI</a
+          > and <a
+            href="https://reactnative.dev/docs/getting-started-without-a-framework"
+            >React Native CLI</a
+          >, providing flexibility for developers across a variety of project
+          setups. For new projects, we recommend using the Expo CLI, as it
+          simplifies the development process by abstracting much of the
+          configuration typically required when using the React Native CLI. This
+          approach aligns with the guidance provided in the official React
+          Native documentation, which suggests starting with a framework like
+          Expo for ease of use and faster setup. For more details, you can
+          explore the <a href="https://reactnative.dev/docs/environment-setup"
+            >React Native environment setup guide</a
+          >.
+        </p>
+      </Content>
+    </main>
+  </MainWrapper>
+
   <Footer />
 </Layout>

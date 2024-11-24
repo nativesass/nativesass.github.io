@@ -12,11 +12,15 @@ export default function Header() {
         </div>
 
         <div className="header__options">
-          <a className='header__github-link' href="https://github.com/nativesass/nativesass">
+          <a className='header__github' href="https://github.com/nativesass/nativesass">
             <i className="fa-brands fa-github" aria-hidden="true"></i>
           </a>
 
-          <button className='header__github-link'>
+          <a className='header__sponsor' href="https://github.com/sponsors/filipe-2">
+            <i className="fa-regular fa-heart" aria-hidden="true"></i>
+          </a>
+
+          <button className='header__theme-btn'>
             <i className="fa-regular fa-moon" aria-hidden="true"></i>
           </button>
         </div>
