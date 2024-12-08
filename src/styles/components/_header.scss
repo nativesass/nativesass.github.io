@@ -2,8 +2,10 @@
 @use 'sass:math' as math;
 
 .header {
-  position: sticky;
-  background-color: var(--clr-neutral-970);
+  position: fixed;
+  background-color: var(--clr-neutral-1000-alpha-900);
+  width: 100%;
+  backdrop-filter: blur(5px);
   border-bottom: var(--border-width-small) var(--border-base-style) var(--clr-neutral-700);
   padding: 15px;
 
