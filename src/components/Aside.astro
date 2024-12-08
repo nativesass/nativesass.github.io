@@ -144,6 +144,30 @@ const currentPath = pathname.slice(1);
           </li>
         </ul>
       </li>
+
+      <li class="aside__topic">
+        <div class="aside__topic-title">
+          <a href="/contributing/issues">Contributing</a>
+        </div>
+
+        <ul class="aside__topic-items">
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "contributing/issues" ? "active" : ""}
+              href="/contributing/issues">Issues and Bugs</a
+            >
+          </li>
+
+          <li class="aside__topic-item">
+            <a
+              class={currentPath === "contributing/prs" ? "active" : ""}
+              href="/contributing/prs"
+            >
+              Pull Requests
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </aside>
