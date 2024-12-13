@@ -1,6 +1,5 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const pathname = Astro.url.pathname;
 ---
 
 <aside class="aside">
@@ -13,7 +12,7 @@ const currentPath = pathname.slice(1);
 
         <ul class="aside__topic-items">
           <li class="aside__topic-item">
-            <a href="/" class={currentPath === "" ? "active" : ""}>
+            <a href="/" class={pathname === "/" ? "active" : ""}>
               What is NativeSass?
             </a>
           </li>
@@ -21,7 +20,7 @@ const currentPath = pathname.slice(1);
           <li class="aside__topic-item">
             <a
               href="/introduction/installation"
-              class={currentPath === "introduction/installation"
+              class={pathname === "/introduction/installation"
                 ? "active"
                 : ""}
             >
@@ -40,7 +39,7 @@ const currentPath = pathname.slice(1);
           <li class="aside__topic-item">
             <a
               href="/features/sassy-function"
-              class={currentPath === "features/sassy-function" ? "active" : ""}
+              class={pathname === "/features/sassy-function" ? "active" : ""}
             >
               The <code>sassy()</code> Function
             </a>
@@ -48,7 +47,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "features/nesting" ? "active" : ""}
+              class={pathname === "/features/nesting" ? "active" : ""}
               href="/features/nesting"
             >
               Nesting
@@ -57,7 +56,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "features/shared-styles" ? "active" : ""}
+              class=pathname === "/features/shared-styles" ? "active" : ""}
               href="/features/shared-styles"
             >
               Shared Styles
@@ -66,7 +65,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "features/shorthands" ? "active" : ""}
+              class={pathname === "/features/shorthands" ? "active" : ""}
               href="/features/shorthands"
             >
               Shorthand Properties
@@ -83,7 +82,7 @@ const currentPath = pathname.slice(1);
         <ul class="aside__topic-items">
           <li class="aside__topic-item">
             <a
-              class={currentPath === "upcoming-features/shorthands"
+              class={pathname === "/upcoming-features/shorthands"
                 ? "active"
                 : ""}
               href="/upcoming-features/shorthands"
@@ -94,7 +93,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "upcoming-features/mixins" ? "active" : ""}
+              class={pathname === "/upcoming-features/mixins" ? "active" : ""}
               href="/upcoming-features/mixins"
             >
               Mixins
@@ -103,7 +102,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "upcoming-features/maps" ? "active" : ""}
+              class={pathname === "/upcoming-features/maps" ? "active" : ""}
               href="/upcoming-features/maps"
             >
               Maps
@@ -120,14 +119,14 @@ const currentPath = pathname.slice(1);
         <ul class="aside__topic-items">
           <li class="aside__topic-item">
             <a
-              class={currentPath === "mimicking/mixins" ? "active" : ""}
+              class={pathname === "/mimicking/mixins" ? "active" : ""}
               href="/mimicking/mixins">Mixins</a
             >
           </li>
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "mimicking/maps" ? "active" : ""}
+              class={pathname === "/mimicking/maps" ? "active" : ""}
               href="/mimicking/maps"
             >
               Maps
@@ -136,7 +135,7 @@ const currentPath = pathname.slice(1);
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "mimicking/functions" ? "active" : ""}
+              class={pathname === "/mimicking/functions" ? "active" : ""}
               href="/mimicking/functions"
             >
               Functions
@@ -153,14 +152,14 @@ const currentPath = pathname.slice(1);
         <ul class="aside__topic-items">
           <li class="aside__topic-item">
             <a
-              class={currentPath === "contributing/issues" ? "active" : ""}
+              class={pathname === "/contributing/issues" ? "active" : ""}
               href="/contributing/issues">Issues and Bugs</a
             >
           </li>
 
           <li class="aside__topic-item">
             <a
-              class={currentPath === "contributing/prs" ? "active" : ""}
+              class={pathname === "/contributing/prs" ? "active" : ""}
               href="/contributing/prs"
             >
               Pull Requests
