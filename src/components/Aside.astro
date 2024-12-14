@@ -1,5 +1,5 @@
 ---
-const pathname = Astro.url.pathname;
+const pathname = new URL(Astro.request.url).pathname;
 console.log(pathname);
 ---
 
